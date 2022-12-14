@@ -1,6 +1,7 @@
 #include "mylib.h"
 
 void get_word(struct word* my_word){
+	setlocale(LC_CTYPE, "");
 	wchar_t* res_symb = malloc(sizeof(wchar_t)*MW);
 	int punct = 0;
 	
@@ -30,7 +31,6 @@ void get_word(struct word* my_word){
 			if(i == MW + k-2){ //c - cкорее всего буква, что будет записана по индексу i => размер массива должен дыть мин i+1+1
 				k+=AW;
 				trash = realloc(res_symb, (MW+k)*sizeof(wchar_t));
-				printf("i just reallocated!\n");
 				if(trash == NULL){
 					free(res_symb);
 					printf("недостаточно места для слова(нельзя сделать realloc), увеличьте MW & AW\n");
@@ -69,6 +69,7 @@ void get_word(struct word* my_word){
 }
 
 int to_low(wchar_t** a, wchar_t**b){
+	setlocale(LC_CTYPE, "");
 	int i = 0;
 	do{
 		if(towlower((*a)[i]) != towlower((*b)[i])){
@@ -80,6 +81,7 @@ int to_low(wchar_t** a, wchar_t**b){
 }
 
 int cmp_wrd(struct word* w1, struct word* w2){
+	setlocale(LC_CTYPE, "");
 	int tmp = to_low(&((*w1).symb), &((*w1).symb));
 	if(tmp && ((*w1).punct == (*w2).punct)){
 		return 1;
