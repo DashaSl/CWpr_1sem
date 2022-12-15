@@ -45,3 +45,9 @@ void get_text(struct text* essay);
 void out_text(struct text* essay);
 void free_text(struct text* essay);
 //функции по вводу, выводу, и фри текста
+//
+//транслитерация
+int translit_letter(wchar_t* str,int i, int size);
+void trans_word(struct word* a);
+void trans_sent(struct sentence* a);
+void trans_text(struct text* a);

@@ -69,7 +69,6 @@ void out_text(struct text* essay){
 
 void free_text(struct text* essay){
 	for(int i = 0; i < (*essay).size; i++){
-		out_sent((*essay).sents+i);
 		free_sent((*essay).sents+i);
 	}
 	free((*essay).sents);
