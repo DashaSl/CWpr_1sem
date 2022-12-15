@@ -8,8 +8,8 @@
 #define AW 5
 #define MS 20
 #define AS 5
-#define MT 30
-#define AT 10
+#define MT 10
+#define AT 5
 
 struct word{
         wchar_t* symb;
@@ -23,9 +23,13 @@ struct sentence{
 	int comma_num;
 };
 
+struct text{
+	struct sentence* sents;
+	int size;
+};
+
 //функции сбора слов, их сравнения
 void get_word(struct word* my_word);
-int to_low(wchar_t** a, wchar_t**b);
 int cmp_wrd(struct word* w1, struct word* w2);
 //функции сбора слов, их сравнения
 //
@@ -35,4 +39,9 @@ void get_sentence(struct sentence* predlog);
 void free_sent(struct sentence* predlog);
 int cmp_sent(struct sentence* s1, struct sentence* s2);
 //функции по вводу, выводу, сравнению предложений
-
+//
+//функции по вводу, выводу, и фри текста
+void get_text(struct text* essay);
+void out_text(struct text* essay);
+void free_text(struct text* essay);
+//функции по вводу, выводу, и фри текста

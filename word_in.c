@@ -68,24 +68,19 @@ void get_word(struct word* my_word){
 	}
 }
 
-int to_low(wchar_t** a, wchar_t**b){
-	setlocale(LC_CTYPE, "");
-	int i = 0;
-	do{
-		if(towlower((*a)[i]) != towlower((*b)[i])){
-			return 0;
-		}
-		i++;
-	}while((*a)[i] != '\0');
-	return 1;
-}
-
 int cmp_wrd(struct word* w1, struct word* w2){
-	setlocale(LC_CTYPE, "");
-	int tmp = to_low(&((*w1).symb), &((*w1).symb));
-	if(tmp && ((*w1).punct == (*w2).punct)){
-		return 1;
+	int tmp = 1;
+	if((*w1).punct != (*w2).punct){
+		return 0;
 	}
-	return 0;
+	int i = 0;
+	while((*w1).symb[i] != L'\0' && (*w2).symb[i] != L'\0'){
+		if(towlower((*w1).symb[i]) != towlower((*w2).symb[i])){
+			tmp = 0;
+			break;
+		}
+		i++;	
+	}
+	return tmp;
 }
 

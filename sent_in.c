@@ -75,6 +75,7 @@ int cmp_sent(struct sentence* s1, struct sentence* s2){
 				return 0;
 			}
 		}
+
 		return 1;
 	}
 
