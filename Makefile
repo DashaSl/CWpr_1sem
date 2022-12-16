@@ -1,7 +1,7 @@
 all: cw
 
-cw: main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o bin_num.o del_odd.o
-	gcc main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o bin_num.o del_odd.o -o cw -lm
+cw: main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o bin_num.o del_odd.o spec_symb.o
+	gcc main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o bin_num.o del_odd.o spec_symb.o -o cw -lm
 
 main.o: main.c mylib.h
 	gcc -c main.c
@@ -19,5 +19,7 @@ bin_num.o: bin_num.c mylib.h
 	gcc -c bin_num.c
 del_odd.o: del_odd.c mylib.h
 	gcc -c del_odd.c
+spec_symb.o: spec_symb.c mylib.h
+	gcc -c spec_symb.c
 clean:
 	rm -rf *.o 

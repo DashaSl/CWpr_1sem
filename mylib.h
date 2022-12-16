@@ -73,3 +73,9 @@ void dbin_text(struct text* a);
 int is_odd_word(struct word* a);
 int is_odd_sent(struct sentence* a);
 void del_odd_sent(struct text* a);
+//удаление нечётных
+//
+//вывод спецсимволов
+int cmp_wc(const void* a, const void* b);
+void out_spc_sent(struct sentence* a);
+void out_spc_text(struct text* a);
