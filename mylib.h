@@ -3,6 +3,7 @@
 #include <wchar.h>
 #include <wctype.h>
 #include <locale.h>
+#include <math.h>
 
 #define MW 10
 #define AW 5
@@ -51,3 +52,12 @@ int translit_letter(wchar_t* str,int i, int size);
 void trans_word(struct word* a);
 void trans_sent(struct sentence* a);
 void trans_text(struct text* a);
+//транслитерация
+//
+//перевод в двоичную
+int is_num(wchar_t* a);
+void tobin(long int a, wchar_t* buff, int max_pow, int len);
+void bin_word(struct word* a);
+void bin_sent(struct sentence* a);
+void bin_text(struct text* a);
+

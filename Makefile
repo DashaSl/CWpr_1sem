@@ -1,7 +1,7 @@
 all: cw
 
-cw: main.o word_in.o sent_in.o text_in.o translit.o
-	gcc main.o word_in.o sent_in.o text_in.o translit.o -o cw
+cw: main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o
+	gcc main.o word_in.o sent_in.o text_in.o translit.o convert_bin.o -o cw -lm
 
 main.o: main.c mylib.h
 	gcc -c main.c
@@ -13,5 +13,7 @@ text_in.o: text_in.c mylib.h
 	gcc -c text_in.c
 translit.o: translit.c mylib.h
 	gcc -c translit.c
+convert_bin.o:
+	gcc -c convert_bin.c
 clean:
 	rm -rf *.o 
