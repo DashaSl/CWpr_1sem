@@ -60,4 +60,16 @@ void tobin(long int a, wchar_t* buff, int max_pow, int len);
 void bin_word(struct word* a);
 void bin_sent(struct sentence* a);
 void bin_text(struct text* a);
-
+//перевод в двоичную
+//
+//ПЕРЕВОД В ДВОИЧНУЮ КОТОРЫЙ ТРЕБОВАЛСЯ
+int bin_dig(wchar_t* str,int i, int size);
+void dbin_word(struct word* a);
+void dbin_sent(struct sentence* a);
+void dbin_text(struct text* a);
+//ПЕРЕВОД В ДВОИЧНУЮ КОТОРЫЙ ТРЕБОВАЛСЯ
+//
+//удаление нечётных
+int is_odd_word(struct word* a);
+int is_odd_sent(struct sentence* a);
+void del_odd_sent(struct text* a);

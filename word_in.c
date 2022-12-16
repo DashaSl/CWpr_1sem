@@ -46,7 +46,7 @@ void get_word(struct word* my_word){
 		//конец сбора слова
 		if(no_error_flag){
 			res_symb[i] = '\0';
-			trash = realloc(res_symb, sizeof(wchar_t)*(3*i + 1)); //чтобы не париться с меммувом
+			trash = realloc(res_symb, sizeof(wchar_t)*(4*i + 1)); //чтобы не париться с меммувом
 				if(trash == NULL){
 					printf("ошибка. слишком длинное слово\nНельзя и слова сказать. Блин, Ярик, memory потiк\n");
 				}

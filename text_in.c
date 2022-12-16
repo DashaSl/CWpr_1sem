@@ -61,15 +61,19 @@ void get_text(struct text* essay){
 
 void out_text(struct text* essay){
 	for(int i = 0; i < (*essay).size; i++){
-		out_sent((*essay).sents+i);
-		printf(" ");
+		if((*essay).sents[i].comma_num != -1){
+			out_sent((*essay).sents+i);
+			printf(" ");
+		}
 	}
 	printf("\n");
 }
 
 void free_text(struct text* essay){
 	for(int i = 0; i < (*essay).size; i++){
-		free_sent((*essay).sents+i);
+		if((*essay).sents[i].comma_num != -1){
+			free_sent((*essay).sents+i);
+		}
 	}
 	free((*essay).sents);
 }
