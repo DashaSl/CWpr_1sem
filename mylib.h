@@ -54,14 +54,6 @@ void trans_sent(struct sentence* a);
 void trans_text(struct text* a);
 //транслитерация
 //
-//перевод в двоичную
-int is_num(wchar_t* a);
-void tobin(long int a, wchar_t* buff, int max_pow, int len);
-void bin_word(struct word* a);
-void bin_sent(struct sentence* a);
-void bin_text(struct text* a);
-//перевод в двоичную
-//
 //ПЕРЕВОД В ДВОИЧНУЮ КОТОРЫЙ ТРЕБОВАЛСЯ
 int bin_dig(wchar_t* str,int i, int size);
 void dbin_word(struct word* a);
