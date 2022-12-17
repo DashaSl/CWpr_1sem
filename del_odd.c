@@ -32,6 +32,7 @@ void del_odd_sent(struct text* a){
 		if(is_odd_sent((*a).sents+i)){
 			free_sent((*a).sents+i);
 			(*a).sents[i].sent = NULL;
+			(*a).sents[i].size = 0;
 			(*a).sents[i].comma_num  = -1;
 		}
 	}

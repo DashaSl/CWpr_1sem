@@ -54,7 +54,9 @@ void out_spc_sent(struct sentence* a){
 
 void out_spc_text(struct text* a){
 	for(int i = 0; i < (*a).size; i++){
-		printf("специальные символы %d предлжения: ", i+1);
-		out_spc_sent((*a).sents+i);
+		if((*a).sents[i].comma_num != -1){
+			printf("специальные символы %d предлжения: ", i+1);
+			out_spc_sent((*a).sents+i);
+		}
 	}
 }
