@@ -1,0 +1,18 @@
+all: CW
+
+CW: m.o input_output_free.o func.o
+	gcc m.o input_output_free.o func.o -o CW
+
+m.o: m.c iof.h func.h
+	gcc -c m.c
+
+input_output_free.o: input_output_free.c iof.h
+	gcc -c input_output_free.c
+
+func.o: func.c func.h
+	gcc -c func.c
+clean:
+	rm -rf *.o
+memcheck:
+	valgrind --leak-check=full ./CW
+
